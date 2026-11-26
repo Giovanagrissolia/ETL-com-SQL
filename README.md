@@ -139,15 +139,6 @@ SELECT * FROM dbo.FN_MONTAR_D_CALENDARIO('2018-01-01', '2022-12-31', 1, 7);
 - **Registro `0` nas dimensões:** garante que a fato sempre encontre uma chave válida.
 - **Carga incremental só para a fato:** dimensões são pequenas e recarregadas em full; a fato é a tabela que cresce.
 
-## Melhorias futuras
-
-- Tratar vendas atrasadas ou alteradas na carga incremental (hoje o filtro usa só a data máxima).
-- Substituir `SELECT *` nos `INSERT` por listas explícitas de colunas.
-- Adicionar tratamento de erros (`TRY/CATCH`) e tabela de log de execução.
-- Automatizar a execução com SQL Server Agent.
-- Evoluir as dimensões para SCD tipo 2, mantendo histórico de alterações.
-- Conectar o DW a um relatório em Power BI.
-
 ## Sobre o projeto
 
 Projeto de portfólio para praticar modelagem dimensional e ETL em SQL Server, cobrindo as camadas transacional, stage e Data Warehouse.
