@@ -55,39 +55,6 @@ Modelo estrela com uma fato e quatro dimensões, mais uma dimensão de calendár
 | `F_VENDAS` | Fato | Quantidade, venda bruta, desconto total, venda líquida e número do documento, com chaves estrangeiras para as dimensões |
 | `D_CALENDARIO` | Dimensão de tempo | Ano, trimestre, mês, semana, dia, ano fiscal e deslocamentos em relação à data atual |
 
-## Estrutura do repositório
-
-```
-DW/
-├── D_CLIENTE/
-│   ├── 01.Create_table.sql
-│   ├── 02.Popular com Truncate.sql
-│   ├── 03. Popular com merge.sql
-│   └── 04. Procedure USP_FULL_D_CLIENTE.sql
-├── D_EMPRESA/
-│   ├── 00. Create table d_empresa.sql
-│   ├── 01. Populando d_empresa usando truncate insert.sql
-│   ├── 02. Populando d_empresa usando MERGE.sql
-│   └── 03. Create procedure USP_FULL_D_EMPRESA.sql
-├── D_PRODUTO/
-│   ├── 00. Create table d_produto.sql
-│   ├── 01. Populando d_produto usando truncate insert.sql
-│   └── 02. Procedure USP_FULL_D_PRODUTO.sql
-├── D_VENDEDOR/
-│   ├── 00. Create table d_vendedor.sql
-│   ├── 01. Populando com merge d_vendedor.sql
-│   └── 02. Procedure USP_FULL_D_VENDEDOR.sql
-├── F_VENDAS/
-├── 01. Creata table Vezes.sql
-├── 02. Populando tabela VEZES.sql
-├── 03. Função MONTAR_D_CALENDARIO.sql
-├── Procedure USP_DW_CARGA_FULL.sql
-├── Procedure USP_DW_CARGA_FULL_ATUALIZADO.sql
-└── Procedure USP_DW_CARGA_INCREMENTAL.sql
-```
-
-Cada pasta de dimensão mostra a evolução do código em três passos: criar a tabela, popular com um script avulso e, por fim, encapsular tudo em uma stored procedure.
-
 ## Como funciona
 
 ### 1. Stage (`PBS_PROCFT_ST`)
